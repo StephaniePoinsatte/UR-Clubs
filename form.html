@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="clubs that can be found on University of Richmond's campus">
+    <meta name="author" content="Stephanie Poinsatte">
+
+    <title>Contact - University of Richmond Clubs!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <style>
+
+    input
+    {
+        width:100px;
+        height:30px;
+        padding:5px;
+        border-radius:5px;
+        font-size:1.2em;
+        border: 1px solid gray;
+        margin-bottom:10px;
+    }
+
+    label
+    {
+        width:200px;
+        float:left;
+        padding-top: 7px;
+    }
+
+    #error
+    {
+        color:red;
+        padding-left:30px;
+        margin-bottom:20px;
+    }
+
+    .form-horizontal
+    {
+        padding-left:30px;
+    }
+
+    textarea
+    {
+        height:200px;
+    }
+
+    #submitButton
+    {
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">UR Clubs</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="form.html">Contact a Club</a>
+                    </li>
+                    <li>
+                        <a href="http://www.richmond.edu">UR Website</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact a Club!
+                </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h4> Do you have a question or comment for a particular club? Do you want to know more information? Fill out this form, and we will have the club of interest get back to you with an answer!</h4>
+        </div>
+
+        <div id="error"></div>
+
+        <form method="post" id="validationForm">
+
+            <div class="form-horizontal" role="form">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input class="form-control" name="name" id="name" placeholder="Eg. Bob Smith" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="example@gmail.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="club">Club of Interest</label>
+                    <input class="form-control" name="club" id="club" placeholder="Eg. Frisbee, Youth Life, etc." />
+                </div>
+                
+                <div class="form-group">
+                    <label for="question">Question, Comment, Inquiry</label>
+                    <textarea class="form-control" name="question" id="question" placeholder="Let us know your thoughts, questions, or general interest"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default" value="Submit" id="submitButton" />
+                </div>
+            </div>
+
+        </form>
+       
+       <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Copyright &copy; Your Website 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+    $("#validationForm").submit(function(event) {
+
+        var errorMessage="";
+
+        event.preventDefault();
+
+        function isValidEmailAddress(emailAddress) {
+        
+            var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+            return pattern.test(emailAddress);
+        };
+
+        if (($("#name").val()) == "")
+        {
+            errorMessage= "<br />Please enter your name";
+        }
+
+        if (!isValidEmailAddress($("#email").val()))
+        {
+            errorMessage= errorMessage+"<br />Please enter a valid email address";
+        }
+
+        if (($("#club").val()) == "")
+        {
+            errorMessage= errorMessage+ "<br />Please enter a club";
+        }
+
+        if (($("#question").val()) == "")
+        {
+            errorMessage= errorMessage+ "<br />Please enter a comment or question";
+        }
+
+
+        if (errorMessage == "")
+        {
+            alert("Your comment or question has been submitted.");
+        }
+        else
+        {
+            $("#error").html(errorMessage);            
+        }
+    });
+
+    </script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
